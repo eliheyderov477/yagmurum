@@ -6,45 +6,48 @@
 <title>Hayatım 🤍</title>
 
 <style>
-body{
-margin:0;
-padding:0;
-overflow:hidden;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#ff4da6,#ff80bf,#ffb3d9);
-text-align:center;
-color:white;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff4da6, #ff80bf, #ffb3d9);
 }
 
-.container{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-z-index:10;
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
 }
 
-img{
-width:260px;
-border-radius:20px;
-box-shadow:0 0 40px white;
-margin-bottom:20px;
+.container img {
+  width: 260px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px white;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 
-h1{
-font-size:26px;
-text-shadow:0 0 15px white;
+.container h1 {
+  font-size: 26px;
+  text-shadow: 0 0 15px white;
 }
 
-.heart{
-position:fixed;
-top:-10px;
-animation:fall linear forwards;
-opacity:0.9;
+.heart {
+  position: fixed;
+  top: -10px;
+  animation: fall linear forwards;
 }
 
-@keyframes fall{
-to{transform:translateY(110vh);}
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
 }
 </style>
 </head>
@@ -52,26 +55,30 @@ to{transform:translateY(110vh);}
 <body>
 
 <div class="container">
-<img src="photo.jpg">
-<h1>Hayatımın En Güzel Hediyesi Sensin🤍</h1>
+  <img src="./photo.jpg" alt="Sevgilim">
+  <h1>Hayatımın En Güzel Hediyesi Sensin🤍</h1>
 </div>
 
 <script>
-function createHeart(){
-const heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="❤";
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤";
 
-const colors=["#ff0000","#ffffff","#00bfff"];
-heart.style.color=colors[Math.floor(Math.random()*3)];
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*30+15)+"px";
-heart.style.animationDuration=(Math.random()*2+2)+"s";
+  const colors = ["#ff0000", "#ffffff", "#00bfff"];
+  heart.style.color = colors[Math.floor(Math.random() * 3)];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 30 + 15) + "px";
+  heart.style.animationDuration = (Math.random() * 2 + 2) + "s";
 
-document.body.appendChild(heart);
-setTimeout(()=>{heart.remove();},4000);
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 4000);
 }
-setInterval(createHeart,40);
+
+setInterval(createHeart, 40);
 </script>
 
 </body>
