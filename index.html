@@ -1,34 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hayatım 🤍</title>
+
 <style>
 body{
 margin:0;
 padding:0;
 overflow:hidden;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:linear-gradient(135deg,#ff4da6,#ff80bf,#ffb3d9);
 text-align:center;
 color:white;
 }
 
-h1{
+.container{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:28px;
-text-shadow:0 0 20px white;
-z-index:5;
+z-index:10;
+}
+
+img{
+width:260px;
+border-radius:20px;
+box-shadow:0 0 40px white;
+margin-bottom:20px;
+}
+
+h1{
+font-size:26px;
+text-shadow:0 0 15px white;
 }
 
 .heart{
 position:fixed;
 top:-10px;
 animation:fall linear forwards;
+opacity:0.9;
 }
 
 @keyframes fall{
@@ -36,9 +48,13 @@ to{transform:translateY(110vh);}
 }
 </style>
 </head>
+
 <body>
-<img src="photo.jpg" width="260">
+
+<div class="container">
+<img src="photo.jpg">
 <h1>Hayatımın En Güzel Hediyesi Sensin🤍</h1>
+</div>
 
 <script>
 function createHeart(){
@@ -59,5 +75,4 @@ setInterval(createHeart,40);
 </script>
 
 </body>
-
 </html>
